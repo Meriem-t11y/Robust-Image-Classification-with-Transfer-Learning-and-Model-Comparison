@@ -133,16 +133,17 @@ This experiment achieved significantly better validation performance than the cu
 
 After transfer learning, the final ResNet18 block was unfrozen and fine-tuned together with the classification layer.
 
-```text
-Pretrained ResNet18
-        ↓
- Frozen Early Layers
-        ↓
- Trainable Final Block
-        ↓
- Trainable Classifier
-        ↓
- 6-Class Output
+```mermaid
+flowchart TD
+    A[Pretrained ResNet18] --> B[Frozen Feature Extractor]
+    B --> C[New Fully Connected Layer]
+    C --> D[6-Class Classification]
+
+    %% Styling
+    style A fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#fff
+    style B fill:#6d28d9,stroke:#c084fc,stroke-width:2px,color:#fff
+    style C fill:#0d9488,stroke:#2dd4bf,color:#fff
+    style D fill:#15803d,stroke:#4ade80,stroke-width:2px,color:#fff
 ```
 
 A lower learning rate of `0.0001` was used during fine-tuning.
