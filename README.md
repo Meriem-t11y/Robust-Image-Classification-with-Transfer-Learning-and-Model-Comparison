@@ -25,23 +25,25 @@ Two different approaches were implemented and compared:
 The ResNet18 model was then **fine-tuned** to investigate whether adapting deeper pretrained features could further improve classification performance.
 
 The project therefore follows a complete experimental workflow:
+```mermaid
+flowchart TD
+    A[Intel Image Classification Dataset] --> B[Data Preparation]
+    B --> C[Custom CNN Baseline]
+    C --> D[Model Evaluation]
+    D --> E[ResNet18 Transfer Learning]
+    E --> F[Fine-Tuning]
+    F --> G[Model Comparison]
+    G --> H[Error Analysis]
 
-```text
-Intel Image Classification Dataset
-              ↓
-        Data Preparation
-              ↓
-      Custom CNN Baseline
-              ↓
-        Model Evaluation
-              ↓
-       ResNet18 Transfer Learning
-              ↓
-          Fine-Tuning
-              ↓
-       Model Comparison
-              ↓
-        Error Analysis
+    %% Styling
+    style A fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#fff
+    style B fill:#1e293b,stroke:#94a3b8,color:#fff
+    style C fill:#0369a1,stroke:#38bdf8,stroke-width:2px,color:#fff
+    style D fill:#1e293b,stroke:#94a3b8,color:#fff
+    style E fill:#6d28d9,stroke:#c084fc,stroke-width:2px,color:#fff
+    style F fill:#1e293b,stroke:#94a3b8,color:#fff
+    style G fill:#15803d,stroke:#4ade80,stroke-width:2px,color:#fff
+    style H fill:#be123c,stroke:#fda4af,color:#fff
 ```
 
 ---
