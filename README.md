@@ -80,20 +80,23 @@ A convolutional neural network was implemented from scratch.
 
 The architecture contains three convolutional blocks followed by fully connected layers:
 
-```text
-Input Image
-     ↓
-Conv2D + ReLU + MaxPool
-     ↓
-Conv2D + ReLU + MaxPool
-     ↓
-Conv2D + ReLU + MaxPool
-     ↓
-Flatten
-     ↓
-Fully Connected Layer
-     ↓
-6-Class Output
+```mermaid
+flowchart TD
+    A[Input Image] --> B[Conv2D + ReLU + MaxPool]
+    B --> C[Conv2D + ReLU + MaxPool]
+    C --> D[Conv2D + ReLU + MaxPool]
+    D --> E[Flatten]
+    E --> F[Fully Connected Layer]
+    F --> G[6-Class Output]
+
+    %% Styling
+    style A fill:#0f172a,stroke:#e2e8f0,stroke-width:2px,color:#fff
+    style B fill:#0284c7,stroke:#38bdf8,color:#fff
+    style C fill:#0284c7,stroke:#38bdf8,color:#fff
+    style D fill:#0284c7,stroke:#38bdf8,color:#fff
+    style E fill:#8b5cf6,stroke:#c084fc,color:#fff
+    style F fill:#0d9488,stroke:#2dd4bf,color:#fff
+    style G fill:#15803d,stroke:#4ade80,stroke-width:2px,color:#fff
 ```
 
 The model was trained using:
